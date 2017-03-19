@@ -152,6 +152,9 @@ tune <- function(method, train.x, train.y = NULL, data = list(),
                     train.y[-train.ind[[sample]]]
 
                 if (is.null(true.y)) true.y <- rep(TRUE, length(pred))
+print(para.set)
+print(sample)
+print(reps)
 print(class(pred))
 print(class(true.y))
 save(pred, file='pred.csv')
