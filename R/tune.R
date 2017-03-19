@@ -156,7 +156,7 @@ tune <- function(method, train.x, train.y = NULL, data = list(),
                 repeat.errors[reps] <- if (!is.null(tunecontrol$error.fun))
                     tunecontrol$error.fun(true.y, pred)
                 else if ((is.logical(true.y) || is.factor(true.y)) && (is.logical(pred) || is.factor(pred) || is.character(pred))) ## classification error
-                    1 - classAgreement(table(pred, true.y))
+                    1 - classAgreement(table(pred, true.y))$diag
                 else if (is.numeric(true.y) && is.numeric(pred)) ## mean squared error
                     crossprod(pred - true.y) / length(pred)
                 else
